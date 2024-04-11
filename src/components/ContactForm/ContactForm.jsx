@@ -4,10 +4,18 @@ import { nanoid } from "nanoid";
 import { useId } from "react";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
+import { addNewContact } from "../../redux/contactsSlice";
+import { useDispatch } from "react-redux";
 
-const ContactForm = ({ onAdd }) => {
+const ContactForm = () => {
+  const dispatch = useDispatch();
+
+  const addContact = (contact) => {
+    dispatch(addNewContact(contact));
+  };
+
   const handleSubmit = (values, options) => {
-    onAdd({ ...values, id: nanoid() });
+    addContact({ ...values, id: nanoid() });
     options.resetForm();
   };
   const initialValues = {

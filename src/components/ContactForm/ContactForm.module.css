@@ -24,7 +24,7 @@
 
 .button {
   margin: 0 auto;
-  background-color: darkgreen;
+  background-color: rgb(241, 27, 27);
   color: white;
   padding: 10px;
   border: 2px solid black;
@@ -33,7 +33,7 @@
   cursor: pointer;
   border: none;
   &:hover {
-    background-color: rgb(6, 64, 6);
+    background-color: rgb(241, 27, 27);
     transition: all 0.5s;
     transform: scale(1.1);
   }

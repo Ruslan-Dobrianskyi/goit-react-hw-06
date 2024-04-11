@@ -2,13 +2,13 @@ import s from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-const Contact = ({ user, onDelete }) => {
+const Contact = ({ contact, onDelete }) => {
   return (
     <li className={s.item}>
-      <FaUser /> {user.name}
+      <FaUser /> {contact.name}
       <FaPhoneAlt />
-      {user.number}
-      <button className={s.button} onClick={() => onDelete(user.id)}>
+      {contact.number}
+      <button className={s.button} onClick={() => onDelete(contact.id)}>
         <MdDeleteForever style={{ width: "30px", height: "30px" }} />
       </button>
     </li>
@@ -16,14 +16,3 @@ const Contact = ({ user, onDelete }) => {
 };
 
 export default Contact;
-
-//  <ul className={s.list}>
-//         {users.map((user) => (
-//           <FaUser /> {user.name}
-//         <FaPhoneAlt />
-//         {user.number}
-//         <button className={s.button} onClick={() => onDelete(user.id)}>
-//           <MdDeleteForever style={{ width: "30px", height: "30px" }} />
-//         </button
-//         ))}
-//       </ul>
